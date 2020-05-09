@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!-- # Utils4YMC [![Version][version-badge]][version-link] ![MIT License][license-badge] -->
 
 
@@ -54,6 +55,9 @@ $ pip install Utils4YMC
 [version-badge]:   https://img.shields.io/badge/version-0.1-brightgreen.svg
 [version-link]:    https://pypi.python.org/pypi/douyin_image/
 [license-badge]:   https://img.shields.io/github/license/pythonml/douyin_image.svg -->
+=======
+# utils4ymc
+>>>>>>> cc78f4455e8d0173be2294ae44f1e41d77931415
 =======
 # utils4ymc
 >>>>>>> cc78f4455e8d0173be2294ae44f1e41d77931415
