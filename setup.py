@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="utils4ymc",
-    version="0.1",
+    version="0.1.2",
     author="Yummy Chen",
     author_email="chenymcan@gmail.com",
     description="Making our programing more efficient.",
