@@ -17,9 +17,20 @@ def func(*args):
     pass
 ```
 * 检查参数的输入类型
-* 记录函数运行时间工具 logger
 ```python
-@@type_assert(*types)
+@type_assert(*types)
+def func(*args):
+    pass
+```
+* 忽略错误
+```python
+@omit_exception(hadle_func)
+def func(*args):
+	pass
+```
+* 出错重试
+``` python
+@retry()
 def func(*args):
     pass
 ```
@@ -29,7 +40,11 @@ def func(*args):
 
 * dist
 计算两个高阶向量的距离，支持L1、L2距离。
-
+``` python
+a = np.random.randn(4,3)
+b = np.random.randn(2,3)
+dist = dist(a, b) # (4, 2)
+```
 
 ### 使用方式
 
