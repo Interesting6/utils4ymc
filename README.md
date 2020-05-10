@@ -17,11 +17,16 @@ def func(*args):
     pass
 ```
 * 检查参数的输入类型
-* 记录函数运行时间工具 logger
 ```python
-@@type_assert(*types)
+@type_assert(*types)
 def func(*args):
     pass
+```
+* 忽略错误
+```python
+@omit_exception(hadle_func)
+def func(*args):
+	pass
 ```
 
 #### Tools 计算工具

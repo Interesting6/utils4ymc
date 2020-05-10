@@ -33,7 +33,32 @@ def memo(func):
 
 
 
+def omit_exception(*omit_args):
+    """
+    Simple decorator that intercepts connection
+    errors and ignores these if settings specify this.
+    """
+    assert len(omit_args) == 1, "omit_exception decorator just recive one parameter!"
+    if isinstance(omit_args[0], int):
+        handle = lambda *args, **kwargs: omit_args[0]
+    elif callable(omit_args[0]):
+        handle = omit_args[0]
+    else:
+        raise TypeError("omit_parameter must be either a callable or an integer!")
+    # assert callable(handle), "parameter 'method' must be a callable!"
 
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                print(f"there is an error '{e}'. in func:{func.__name__} with args:{args, kwargs}")
+                return handle(*args, **kwargs)
+
+                
+        return wrapper
+    return decorator
 
 
 
