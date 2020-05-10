@@ -61,5 +61,26 @@ def omit_exception(*omit_args):
     return decorator
 
 
+def retry(tries=3, delay=1):
+    """Retry calling the decorated function using an exponential backoff.
+    tries: if error happened try it again with 'tries' times;
+    delay: error happened, try it after 'delay' seconds.
+    重试三次，直到结束
+    """
+    def deco_retry(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            nonlocal tries
+            while tries > 0:
+                try:
+                    res = func(*args, **kwargs)
+                    return res
+                except Exception as e:
+                    msg = f"'{e}', Retrying in {delay} seconds..."
+                    print(msg)
+                    time.sleep(delay)
+                tries -= 1
+        return wrapper  
+    return deco_retry
 
 
